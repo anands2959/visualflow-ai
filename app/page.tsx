@@ -23,6 +23,9 @@ export default function Home() {
               height: 0,
               width: 0,
               publicId: "",
+              name: "New Layer",
+              format: "",
+              resourceType: "image"
             },
           ],
         }}
