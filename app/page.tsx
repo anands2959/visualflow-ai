@@ -4,7 +4,15 @@ import Editor from "@/components/editor"
 import Loading from "@/components/loading"
 import { LayerStore } from "@/lib/layer-store"
 import { ImageStore } from "@/lib/store"
+import { useEffect, useState } from "react"
+
 export default function Home() {
+  const [initialLayerId, setInitialLayerId] = useState("temp-id")
+
+  useEffect(() => {
+    setInitialLayerId(crypto.randomUUID())
+  }, [])
+
   return (
     <ImageStore.Provider
       initialValue={{
@@ -18,7 +26,7 @@ export default function Home() {
           layerComparisonMode: false,
           layers: [
             {
-              id: crypto.randomUUID(),
+              id: initialLayerId,
               url: "",
               height: 0,
               width: 0,
