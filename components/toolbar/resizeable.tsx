@@ -11,7 +11,10 @@ export default function Resizable() {
   const setImageWidth = useImageStore((state) => state.setImageWidth)
 
   // const handleDragEnd = (e) => {}
-  const handleDragEnd = (e: any, info: PanInfo) => {}
+ const handleDragEnd = (e: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+    setImageWidth(info.offset.x)
+    setImageHeight(info.offset.y)
+  }
 
   return (
     <motion.div className="border-4 relative w-full h-full ">
