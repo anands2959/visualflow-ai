@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { motion, useMotionValue, useTransform } from "framer-motion"
+import { motion, useMotionValue, useTransform,PanInfo } from "framer-motion"
 import { useImageStore } from "@/lib/store"
 
 export default function Resizable() {
@@ -11,10 +11,7 @@ export default function Resizable() {
   const setImageWidth = useImageStore((state) => state.setImageWidth)
 
   // const handleDragEnd = (e) => {}
- const handleDragEnd = (e: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
-    setImageWidth(info.offset.x)
-    setImageHeight(info.offset.y)
-  }
+ const handleDragEnd = (e: any, info: PanInfo) => {}
 
   return (
     <motion.div className="border-4 relative w-full h-full ">
